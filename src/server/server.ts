@@ -114,7 +114,7 @@ export const createServer = (
         } else if (ex instanceof CognitoError) {
           req.log.warn(ex, `Error handling target: ${target}`);
           res.status(400).json({
-            code: ex.code,
+            __type: ex.code,
             message: ex.message,
           });
           return;
